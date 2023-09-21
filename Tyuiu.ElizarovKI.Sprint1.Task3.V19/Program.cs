@@ -4,24 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.ElizarovKI.Sprint1.Task2.V18.Lib;
+using Tyuiu.ElizarovKI.Sprint1.Task3.V19.Lib;
 
-
-namespace Tyuiu.ElizarovKI.Sprint1.Task2.V18
+namespace Tyuiu.ElizarovKI.Sprint1.Task3.V19
 {
     class Program
     {
+        static int readInt()
+        {
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
         static void Main(string[] args)
         {
             DataService ds = new DataService();
 
-            Console.Title = "Спринт #1 | Выполнил: Елизаров К. И. | ИИПб-23-2";
+             Console.Title = "Спринт #1 | Выполнил: Елизаров К. И. | ИИПб-23-2";
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #1                                                               *");
-            Console.WriteLine("* Тема: Арифметические операторы в C#                                     *");
-            Console.WriteLine("* Задание #2                                                              *");
-            Console.WriteLine("* Вариант #18                                                             *");
+            Console.WriteLine("* Тема: Операторы составного присваивания                                 *");
+            Console.WriteLine("* Задание #3                                                              *");
+            Console.WriteLine("* Вариант #19                                                             *");
             Console.WriteLine("* Выполнил: Елизаров Кирилл Игоревич | ИИПб-23-2                          *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
@@ -32,23 +36,32 @@ namespace Tyuiu.ElizarovKI.Sprint1.Task2.V18
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
+            Console.WriteLine("Введите x1 = ");
+            int x1 = readInt();
 
-            int value, valueTwo, valueThree;
+            Console.WriteLine("Введите x2 = ");
+            int x2 = readInt();
 
-            Console.WriteLine("Длина параллелепипеда:");
-            value = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите y1 = ");
+            int y1 = readInt();
 
-            Console.WriteLine("Ширина параллелепипеда:");
-            valueTwo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите y2 = ");
+            int y2 = readInt();
 
-            Console.WriteLine("Высота параллелепипеда:");
-            valueThree = Convert.ToInt32(Console.ReadLine());
+            bool result = ds.ElephCanMove(x1, x2, y1, y2);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            Console.WriteLine("Площадь боковой поверхности параллелепипеда = " + ds.CalculateSideSquareParallelepiped(value, valueTwo, valueThree));
+            if (result)
+            {
+                Console.WriteLine("Слон может сходить");
+            }
+            else
+            {
+                Console.WriteLine("Слон не может сходить");
+            }
 
             Console.ReadLine();
         }
