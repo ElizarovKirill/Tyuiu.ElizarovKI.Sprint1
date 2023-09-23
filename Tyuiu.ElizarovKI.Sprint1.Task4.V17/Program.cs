@@ -4,69 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Tyuiu.ElizarovKI.Sprint1.Task3.V19.Lib;
+using Tyuiu.ElizarovKI.Sprint1.Task4.V17.Lib;
 
-namespace Tyuiu.ElizarovKI.Sprint1.Task3.V19
+namespace Tyuiu.ElizarovKI.Sprint1.Task4.V17
 {
     class Program
     {
-        static void printTitle()
-        {
-            Console.Title = "Спринт #1 | Выполнил: Елизаров К. И. | ИИПб-23-2";
-
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* Спринт #1                                                               *");
-            Console.WriteLine("* Тема: Операторы составного присваивания                                 *");
-            Console.WriteLine("* Задание #3                                                              *");
-            Console.WriteLine("* Вариант #19                                                             *");
-            Console.WriteLine("* Выполнил: Елизаров Кирилл Игоревич | ИИПб-23-2                          *");
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу, которая запрашивает у пользователя исходные данные, *");
-            Console.WriteLine("* выполняет указанные расчёты и печатает результат на экране.             *");
-            Console.WriteLine("*                                                                         *");
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
-            Console.WriteLine("***************************************************************************");
-        }
-
-        static int readInt()
-        {
-            return Convert.ToInt32(Console.ReadLine());
-        }
-
         static void Main(string[] args)
         {
             DataService ds = new DataService();
 
-            printTitle();
+            Console.Title = "Спринт #1 | Выполнил: Елизаров К. И. | ИИПб-23-2";
 
-            Console.WriteLine("Введите x1 от 1 до 8 = ");
-            int x1 = readInt();
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* Спринт #1                                                               *");
+            Console.WriteLine("* Тема: Class Math                                                        *");
+            Console.WriteLine("* Задание #4                                                              *");
+            Console.WriteLine("* Вариант #17                                                             *");
+            Console.WriteLine("* Выполнил: Елизаров Кирилл Игоревич | ИИПб-23-2                          *");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* УСЛОВИЕ:                                                                *");
+            Console.WriteLine("* Написать программу, которая запрашивает у пользователя исходные данные, *");
+            Console.WriteLine("* вычисляет результат по формуле и печатает его на экране.                *");
+            Console.WriteLine("*                                                                         *");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
+            Console.WriteLine("***************************************************************************");
 
-            Console.WriteLine("Введите x2 от 1 до 8 = ");
-            int x2 = readInt();
+            int x, y;
 
-            Console.WriteLine("Введите y1 от 1 до 8 = ");
-            int y1 = readInt();
+            Console.WriteLine("Введите значение X: ");
+            x = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Введите y2 от 1 до 8 = ");
-            int y2 = readInt();
-
-            bool result = ds.ElephCanMove(x1, x2, y1, y2);
+            Console.WriteLine("Введите значение Y: ");
+            y = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            if (result)
-            {
-                Console.WriteLine("Слон может сходить");
-            }
-            else
-            {
-                Console.WriteLine("Слон не может сходить");
-            }
+            Console.WriteLine("1 / √x - 5y = " + ds.Calculate(x, y));
 
             Console.ReadLine();
         }
